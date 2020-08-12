@@ -1,12 +1,11 @@
-const Account = function (obj) {
-  this.obj = obj;
+const Account = function ({ login, email, ...rest }) {
+  this.login = login;
+  this.email = email;
 };
 
 Account.prototype.getInfo = function () {
-  console.log(`Login: ${this.obj.login}, Email: ${this.obj.email}`);
+  console.log(`Login: ${this.login}, Email: ${this.email}`);
 };
-
-console.log(Account.prototype.getInfo);
 
 const mango = new Account({
   login: "Mangozedog",
